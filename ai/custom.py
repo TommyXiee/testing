@@ -9,7 +9,7 @@ import game.tcturtle
 class CombatTurtle(game.tcturtle.TurtleParent):
     """Template Combat Turtle class.
 
-    本乌龟，1.在行动模式上，采取“敌不动我动”的策略：简单来说，在对手不处于追击范围时，每隔很小一段时间随机选择一个方向来行进。
+    此AI，1.在行动模式上，采取“敌不动我动”的策略：简单来说，在对手不处于追击范围时，每隔很小一段时间随机选择一个方向来行进。
             2.在作战特性上，采取“守株待兔”的策略：对手一旦进入追击范围，此乌龟便一改不恋战的游走特性，积极展开战略行动，部署攻击。
             3.在伤害规避方面，主要以一定程度的走位来完成：设置转向速度，用于避免直线来去的弊端。
             4.此乌龟兼具隐形特性
@@ -24,7 +24,7 @@ class CombatTurtle(game.tcturtle.TurtleParent):
 
         ### 返回菜单中显示的名字.
 
-        return "D.W.G"
+        return "NewTurtle [NEW]"
 
     #-------------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ class CombatTurtle(game.tcturtle.TurtleParent):
 
         ### 描述只能有一行。
 
-        return "The Big Turtle"
+        return "evolved turtle"
 
     #-------------------------------------------------------------------------
 
@@ -62,8 +62,8 @@ class CombatTurtle(game.tcturtle.TurtleParent):
 
         # return ((16, 14, 12, 14), (0, math.pi/2, math.pi, 3*math.pi/2))
         # return ((10, 10, 10, 10), (0, math.pi / 2, math.pi, 6 * math.pi / 2))
-        # return ((10, 10, 10, 10), (math.pi / 2, math.pi / 2, math.pi, 6 * math.pi / 2)) #隐形效果
-        return ((10, 10, 10, 10), (0, math.pi / 2, math.pi, 6 * math.pi / 2))
+        return ((10, 10, 10, 10), (math.pi / 2, math.pi / 2, math.pi, 6 * math.pi / 2)) #隐形效果
+        # return ((10, 10, 10, 10), (0, math.pi / 2, math.pi, 6 * math.pi / 2)) //一钝角三角形
 
     #=========================================================================
 
