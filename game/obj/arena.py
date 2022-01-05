@@ -18,6 +18,7 @@ class Arena:
         3 -- wall with a central passage
         4 -- plus sign
         5 -- randomized
+        6 -- 
     """
 
     #-------------------------------------------------------------------------
@@ -28,8 +29,8 @@ class Arena:
         """
 
         return ["Empty Arena", "Central Column Arena", "Corner Column Arena",
-                "Doorway Arena", "Plus-Shaped Arena", "Randomized Arena"]
-
+                "Doorway Arena", "Plus-Shaped Arena", "Randomized Arena","Equation Arena [New]"] 
+        #"Equation Arena" appended
     #-------------------------------------------------------------------------
 
     def get_p1_coords(index):
@@ -122,7 +123,10 @@ class Arena:
         elif layout == 5:
             # Randomized
             self._random_blocks()
-
+        elif layout == 6:
+            # Randomized
+            self._double_block()
+        
     #-------------------------------------------------------------------------
 
     def __del__(self):
@@ -131,6 +135,24 @@ class Arena:
         """
 
         del self._blocks[:]
+
+    #-------------------------------------------------------------------------
+
+    def _double_block(self): #custom
+        """Arena._double_block() -> None
+        Generates the blocks of the Equation arena type.
+        """
+
+        # Define column block
+        self._blocks.append(Block(self.game, (self.size[0]/2)-80,
+                                  (self.size[0]/2)+80, (self.size[1]/2)-160,
+                                  (self.size[1]/2)-40))
+        self._blocks.append(Block(self.game, (self.size[0]/2)-80,
+                                  (self.size[0]/2)+80, (self.size[1]/2)+40,
+                                  (self.size[1]/2)+160))
+
+    #-------------------------------------------------------------------------
+
 
     #-------------------------------------------------------------------------
 
